@@ -1,0 +1,51 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: 'Helvetica, Arial, sans-serif';
+$verde: green;
+// mixins (para reutilizar código)
+
+@mixin flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  flex-direction: column;
+  @include flex-center();
+}
+// Estilo general del cuerpo
+body {
+  font-family: $font-stack;
+  background-color: $primary-color;
+  color: white;
+  padding: 20px;
+}
+
+// Anidamiento de selectores
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $secondary-color;
+    &:hover {
+      color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+h1{
+  background-color: $verde;
+  &:hover{
+    background-color: lighten($verde, 10%);
+  }
+}
